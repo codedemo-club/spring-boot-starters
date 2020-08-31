@@ -1,11 +1,24 @@
 package club.codedemo.springbootstarters.entity;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 /**
  * 学生
  */
+@Entity
 public class Student {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
+
+    public Student() {
+    }
 
     public Student(Long id, String name) {
         this.id = id;
